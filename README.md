@@ -69,3 +69,21 @@ POST /api/leads
 - MySQL database storage
 - JSON API response
 - Rate limiting
+## New Features
+
+- Input Validation
+- Success Request Logging
+- Failed Request Logging
+- Validation Error Logging
+- Server Error Logging
+
+## Logging
+
+Laravel application logs are stored in:
+
+storage/logs/laravel.log
+
+The application records:
+- Successful lead submissions
+- Validation failures
+- Server and database errors
