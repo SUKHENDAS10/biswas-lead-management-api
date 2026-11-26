@@ -87,3 +87,26 @@ The application records:
 - Successful lead submissions
 - Validation failures
 - Server and database errors
+
+## Rate Limiting
+
+Rate limiting has been implemented to protect
+the Lead Form API from spam and excessive requests.
+
+### Configuration
+
+- Maximum Requests: 3
+- Time Window: 1 Minute
+- Middleware: Laravel Throttle
+- Limit Scope: Per IP Address
+
+### API Endpoint
+
+POST /api/leads
+
+### Testing Results
+
+- First Request: 201 Created
+- 3rd Request: 201 Created
+- 4th Request: 429 Too Many Requests
+- After Limit Reset: 201 Created
